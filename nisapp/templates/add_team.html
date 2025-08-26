@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Team</title>
+</head>
+<body>
+    <h1>Add Team</h1>
+    <form method="post" action="{% url 'add_team' %}">
+        {% csrf_token %}
+        <label for="team_name">Team Name:</label>
+        <input type="text" id="team_name" name="team_name" required><br><br>
+
+        <label for="city_town">City/Town:</label>
+        <input type="text" id="city_town" name="city_town" required><br><br>
+
+        <label for="captain_phone">Captain Phone Number (Optional):</label>
+        <input type="tel" id="captain_phone" name="captain_phone"><br><br>
+
+        <label for="captain_name">Team Captain Name (Optional):</label>
+        <input type="text" id="captain_name" name="captain_name"><br><br>
+
+        {% comment %} <input type="submit" value="Add Team"> {% endcomment %}
+        <button type="submit">Add Team</button>
+    </form>
+
+    <p><a href="{% url 'add_team' %}">Add One More Team</a></p>
+</body>
+</html>
